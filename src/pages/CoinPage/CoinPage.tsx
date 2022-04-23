@@ -32,7 +32,7 @@ const CoinPage = (): JSX.Element => {
         <img className="title__image" src={coin?.image.large} alt="logo coin" />
         <h1 className="title__text">{coin?.name}</h1>
       </div>
-      <Link to="/">Volver</Link>
+      <Link to="/investorpredict">Volver</Link>
       <h2 className="coin__title">Historial</h2>
       El historial de los últimos 90 días es:
       {coinTime && <GraphCoin coinTime={coinTime} />}

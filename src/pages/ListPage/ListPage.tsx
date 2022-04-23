@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { useHref } from "react-router-dom";
+import { Link, useHref } from "react-router-dom";
 import { CoinService, ICoin } from "../../services/coins.services";
 
 const ListPage = (): JSX.Element => {
@@ -24,8 +24,6 @@ const ListPage = (): JSX.Element => {
       )
     );
   };
-
-  const href = useHref("");
   return (
     <div>
       <h1 className="coin__title">Investorpredict</h1>
@@ -42,7 +40,7 @@ const ListPage = (): JSX.Element => {
       <div className="list">
       {coinsFiltered.map((coin) => (
         <React.Fragment key={coin.id}>
-          <a href={`${href}${coin.id}`}>{coin.name}</a>
+          <Link to={`/investorpredict/${coin.id}`}>{coin.name}</Link>
           <br />
         </React.Fragment>
       ))}

@@ -8,8 +8,8 @@ const App = (): JSX.Element => {
     <Router>
       <div>
         <Routes>
-          <Route path="/:coinId" element={<CoinPage />} />
-          <Route index element={<ListPage />} />
+          <Route path="investorpredict/:coinId" element={<CoinPage />} />
+          <Route path="investorpredict/" element={<ListPage />} />
         </Routes>
       </div>
     </Router>
