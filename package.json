@@ -1,7 +1,7 @@
 {
   "name": "future-coin",
   "version": "0.1.0",
-  "homepage":"https://github.com/jeissonmgz/investorpredict",
+  "homepage":"https://jeissonmgz.github.io/investorpredict",
   "private": true,
   "dependencies": {
     "-": "0.0.1",
