@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { GraphLine, IGraphLine } from "../../../components/Graph/GraphLine";
 import { ICoinDollarTime } from "../../../services/coins.services";
 import { IRegresion, Regresion } from "../../../utils/regresion";
 import { Time } from "../../../utils/time";
@@ -9,18 +10,39 @@ interface IEstimationCoin {
 
 const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
   const [posibleValue, setPosibleValue] = useState<IRegresion[]>([]);
+  const [graphData, setGraphData] = useState<IGraphLine>();
   const nextDays = Time.getNextDays(7);
 
+  const colors = ['#F272A1', '#6D5DA6', '#232B59', '#60BFBF', '#F2958D', '#593E25'];
+
+  const valueToday = coinTime.prices[coinTime.prices.length-1][1];
   useEffect(() => {
     const valuesUSD = coinTime.prices.map((c, index) => [index, c[1]]);
-    setPosibleValue(
-      Regresion.getRegresions(valuesUSD).filter((r) => !isNaN(r.reliability))
-    );
+    const regresion = Regresion.getRegresions(valuesUSD).filter((r) => !isNaN(r.reliability));
+    setPosibleValue(regresion);
+    setGraphData({
+        name: "Posibles pronósticos",
+        labels: nextDays,
+        datasets: regresion.map((r, i)=>({
+            name: `${50 + r.reliability / 2}%`,
+            backgroundColor:colors[i],
+            borderColor: colors[i],
+            values: r.values
+        }))
+      })
+    
   }, [coinTime]);
 
   return (
-    <>
-      <table>
+    <div className="estimation_coin">
+        <h2 className="estimation_coin__title">Pronóstico</h2>
+        A continuación, te presentamos posibles valores para los próximos 7 días, con distintos métodos, cada método tiene un margen de confiabilidad:
+<br />
+<br />
+<span className="estimation_coin__badge">Valor hoy ${valueToday.toFixed(2)} USD</span>
+        {graphData && <GraphLine {...graphData} />}
+<div className="estimation_coin__container">
+      <table className="estimation_coin__table">
         <thead>
           <tr>
             <th>Método</th>
@@ -42,7 +64,9 @@ const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
           ))}
         </tbody>
       </table>
-    </>
+
+</div>
+    </div>
   );
 };
 

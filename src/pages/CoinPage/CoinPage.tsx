@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   CoinService,
   ICoinDetail,
@@ -32,6 +32,9 @@ const CoinPage = (): JSX.Element => {
         <img className="title__image" src={coin?.image.large} alt="logo coin" />
         <h1 className="title__text">{coin?.name}</h1>
       </div>
+      <Link to="/">Volver</Link>
+      <h2 className="coin__title">Historial</h2>
+      El historial de los últimos 90 días es:
       {coinTime && <GraphCoin coinTime={coinTime} />}
       {coinTime && <EstimationCoin coinTime={coinTime} />}
     </div>
