@@ -28,19 +28,26 @@ const ListPage = (): JSX.Element => {
   const href = useHref("");
   return (
     <div>
-      ListPage
+      <h1 className="coin__title">Investorpredict</h1>
+      Conoce el valor de las criptomonedas para mañana ;)
       <input
+        className="coin__input"
         type="text"
         name="name"
+        placeholder="Filtrar criptomoneda"
         onChange={onChangeFilterHandler}
         value={filter}
       />
+      <br />
+      <div className="list">
       {coinsFiltered.map((coin) => (
         <React.Fragment key={coin.id}>
           <a href={`${href}${coin.id}`}>{coin.name}</a>
           <br />
         </React.Fragment>
       ))}
+      </div>
+      
     </div>
   );
 };
