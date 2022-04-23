@@ -14,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-color);
+  padding: 4px;
 }
 
 code {
@@ -64,6 +66,24 @@ code {
   width: 100%;
   text-align: center;
   color: var(--primary-color);
+}
+
+.coin__input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  color: var(--primary-color-dark);
+  font-size: large;
+  border-radius: 20px;
+}
+
+.list {
+  background: white;
+  color: var(--light-color);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 8px;
 }
 
 .estimation_coin__badge {
