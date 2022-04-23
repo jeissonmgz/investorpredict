@@ -1,16 +1,10 @@
 # Investorpredict (FrontEnd)
 Esta aplicación consiste en predecir los valores para las criptomonedas en dolares:
-Abrir [https://jeissonmgz.github.io/investorpredict/](https://jeissonmgz.github.io/investorpredict/) para ver en el navegador.
+Abrir demo [https://jeissonmgz.github.io/investorpredict/](https://jeissonmgz.github.io/investorpredict/) para ver en el navegador.
 ## Tecnologías usadas
 - Javascript
 - Typescript
 - React
-
-## Desplegar en local
-### `npm start`
-
-Esto corre la aplicación en modo dev.\
-Abrir [http://localhost:3000](http://localhost:3000) para ver en el navegador.
 
 ## Desplegar en local
 
