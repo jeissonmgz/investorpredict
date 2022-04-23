@@ -24,11 +24,11 @@ Abrir [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Vistas
 
-- **Vista del home**	
+### **Vista del home**	
 ![Vista del menu](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/home.png)
 
-- **Vista de una criptomoneda**	
+### **Vista de una criptomoneda**	
 ![Vista de una criptomoneda](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_cripto.png)
 
-- **Vista del pronóstico**
+### **Vista del pronóstico**
 ![Vista del pronóstico](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_pronostico.png)
