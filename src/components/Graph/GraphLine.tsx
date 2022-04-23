@@ -46,7 +46,7 @@ export const GraphLine = ({
       responsive: true,
       plugins: {
         legend: {
-          position: "top" as const,
+          position: "right" as const,
         },
         title: {
           display: true,
