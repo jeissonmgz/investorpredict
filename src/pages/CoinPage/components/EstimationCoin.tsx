@@ -13,59 +13,69 @@ const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
   const [graphData, setGraphData] = useState<IGraphLine>();
   const nextDays = Time.getNextDays(7);
 
-  const colors = ['#F272A1', '#6D5DA6', '#232B59', '#60BFBF', '#F2958D', '#593E25'];
+  const colors = [
+    "#F272A1",
+    "#6D5DA6",
+    "#232B59",
+    "#60BFBF",
+    "#F2958D",
+    "#593E25",
+  ];
 
-  const valueToday = coinTime.prices[coinTime.prices.length-1][1];
+  const valueToday = coinTime.prices[coinTime.prices.length - 1][1];
   useEffect(() => {
     const valuesUSD = coinTime.prices.map((c, index) => [index, c[1]]);
-    const regresion = Regresion.getRegresions(valuesUSD).filter((r) => !isNaN(r.reliability));
+    const regresion = Regresion.getRegresions(valuesUSD).filter(
+      (r) => !isNaN(r.reliability)
+    );
     setPosibleValue(regresion);
     setGraphData({
-        name: "Posibles pronósticos",
-        labels: nextDays,
-        datasets: regresion.map((r, i)=>({
-            name: `${50 + r.reliability / 2}%`,
-            backgroundColor:colors[i],
-            borderColor: colors[i],
-            values: r.values
-        }))
-      })
-    
+      name: "Posibles pronósticos",
+      labels: nextDays,
+      datasets: regresion.map((r, i) => ({
+        name: `${50 + r.reliability / 2}%`,
+        backgroundColor: colors[i],
+        borderColor: colors[i],
+        values: r.values,
+      })),
+    });
   }, [coinTime]);
 
   return (
     <div className="estimation_coin">
-        <h2 className="estimation_coin__title">Pronóstico</h2>
-        A continuación, te presentamos posibles valores para los próximos 7 días, con distintos métodos, cada método tiene un margen de confiabilidad:
-<br />
-<br />
-<span className="estimation_coin__badge">Valor hoy ${valueToday.toFixed(2)} USD</span>
-        {graphData && <GraphLine {...graphData} />}
-<div className="estimation_coin__container">
-      <table className="estimation_coin__table">
-        <thead>
-          <tr>
-            <th>Método</th>
-            <th>Confiabilidad</th>
-            {nextDays.map((day) => (
-              <th key={day}>{day}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {posibleValue.map((p) => (
-            <tr key={p.name}>
-              <td>{p.name}</td>
-              <td>{50 + p.reliability / 2}%</td>
-              {p.values.map((v, i) => (
-                <td key={`${p.name}${v}${i}`}>{v}</td>
+      <h2 className="estimation_coin__title">Pronóstico</h2>
+      A continuación, te presentamos posibles valores para los próximos 7 días,
+      con distintos métodos, cada método tiene un margen de confiabilidad:
+      <br />
+      <br />
+      <span className="estimation_coin__badge">
+        Valor hoy ${valueToday.toFixed(2)} USD
+      </span>
+      {graphData && <GraphLine {...graphData} />}
+      <div className="estimation_coin__container">
+        <table className="estimation_coin__table">
+          <thead>
+            <tr>
+              <th>Método</th>
+              <th>Confiabilidad</th>
+              {nextDays.map((day) => (
+                <th key={day}>{day}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-
-</div>
+          </thead>
+          <tbody>
+            {posibleValue.map((p) => (
+              <tr key={p.name}>
+                <td>{p.name}</td>
+                <td>{50 + p.reliability / 2}%</td>
+                {p.values.map((v, i) => (
+                  <td key={`${p.name}${v}${i}`}>{v}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

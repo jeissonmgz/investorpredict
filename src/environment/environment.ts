@@ -1,3 +1,4 @@
-export const environment = {
-  urlApi: "https://api.coingecko.com/api/v3",
-};
+//import { environmentDev } from "./environment.dev";
+import { environmentProd } from "./environment.prod";
+
+export const environment = environmentProd;
