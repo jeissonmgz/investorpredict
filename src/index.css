@@ -68,15 +68,6 @@ code {
   color: var(--primary-color);
 }
 
-.list {
-  background: white;
-  color: var(--light-color);
-  padding: 1em;
-  margin: 1em;
-  border-radius: 8px;
-  text-align: center;
-}
-
 .estimation_coin__badge {
   background-color: var(--primary-color);
   padding: 8px 16px;
@@ -207,4 +198,14 @@ code {
 
 .list_page__search:focus-visible {
   outline: 1px solid var(--primary-color-dark);
+}
+
+.list_page__container {
+  background: white;
+  color: var(--light-color);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 200px;
 }

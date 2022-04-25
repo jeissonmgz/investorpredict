@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { environment } from "../../environment/environment";
 import { CoinService, ICoin } from "../../services/coins.services";
+import ScrollList from "./components/ScrollList";
 
 const ListPage = (): JSX.Element => {
   const [coins, setCoins] = useState<ICoin[]>([]);
@@ -41,16 +40,10 @@ const ListPage = (): JSX.Element => {
         value={filter}
       />
       <br />
-      {coinsFiltered.length=== 0 && coins.length!== 0 && filter !== "" && <div>No encontramos tu criptomoneda :(</div>}
-      <div className="list">
-        {coinsFiltered.map((coin) => (
-          <React.Fragment key={coin.id}>
-            <Link className="link" to={`/${environment.urlBase}${coin.id}`}>
-              {coin.name}
-            </Link>
-          </React.Fragment>
-        ))}
-      </div>
+      {coinsFiltered.length === 0 && coins.length !== 0 && filter !== "" && (
+        <div>No encontramos tu criptomoneda :(</div>
+      )}
+      {coinsFiltered.length > 0 && <ScrollList coins={coinsFiltered} />}
     </div>
   );
 };

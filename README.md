@@ -20,8 +20,11 @@ Abrir [http://localhost:3000/investorpredict](http://localhost:3000/investorpred
 
 ## Screenshots
 
-### **Home**	
-![Vista del menu](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/home.png)
+### **Vista del home**	
+![Vista del home](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/home.jpg)
+
+### **Vista de buscar criptomoneda**	
+![Vista de buscar criptomoneda](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/buscar.jpg)
 
 ### **Vista de una criptomoneda**	
 ![Vista de una criptomoneda](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_cripto.png)
