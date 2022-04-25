@@ -15,7 +15,7 @@ En el directorio del proyecto:
 ### `npm start`
 
 Esto corre la aplicación en modo dev.\
-Abrir [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Abrir [http://localhost:3000/investorpredict](http://localhost:3000/investorpredict) to view it in the browser.
 
 
 ## Screenshots

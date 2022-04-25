@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Link, useHref } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { environment } from "../../environment/environment";
 import { CoinService, ICoin } from "../../services/coins.services";
 
 const ListPage = (): JSX.Element => {
@@ -9,7 +10,6 @@ const ListPage = (): JSX.Element => {
   useEffect(() => {
     CoinService.getCoins().then((result) => {
       setCoins(result);
-      setCoinsFiltered(result);
     });
   }, []);
 
@@ -18,11 +18,15 @@ const ListPage = (): JSX.Element => {
   ): void => {
     const value = event.target.value;
     setFilter(value);
-    setCoinsFiltered(
-      coins.filter((coin) =>
-        coin.name.toLowerCase().includes(value.toLowerCase())
-      )
-    );
+    if (value.length > 1) {
+      setCoinsFiltered(
+        coins.filter((coin) =>
+          coin.name.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+    } else {
+      setCoinsFiltered([]);
+    }
   };
   return (
     <div>
@@ -32,20 +36,19 @@ const ListPage = (): JSX.Element => {
         className="coin__input"
         type="text"
         name="name"
-        placeholder="Filtrar criptomoneda"
+        placeholder="Busca tu criptomoneda"
         onChange={onChangeFilterHandler}
         value={filter}
       />
       <br />
       <div className="list">
-      {coinsFiltered.map((coin) => (
-        <React.Fragment key={coin.id}>
-          <Link to={`/investorpredict/${coin.id}`}>{coin.name}</Link>
-          <br />
-        </React.Fragment>
-      ))}
+        {coinsFiltered.map((coin) => (
+          <React.Fragment key={coin.id}>
+            <Link to={`/${environment.urlBase}${coin.id}`}>{coin.name}</Link>
+            <br />
+          </React.Fragment>
+        ))}
       </div>
-      
     </div>
   );
 };
