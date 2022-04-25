@@ -68,22 +68,13 @@ code {
   color: var(--primary-color);
 }
 
-.coin__input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  color: var(--primary-color-dark);
-  font-size: large;
-  border-radius: 20px;
-}
-
 .list {
   background: white;
   color: var(--light-color);
   padding: 1em;
   margin: 1em;
   border-radius: 8px;
+  text-align: center;
 }
 
 .estimation_coin__badge {
@@ -174,4 +165,46 @@ code {
     box-shadow: 0 -2em;
     height: 5em;
   }
+}
+
+.link {
+  display: inline-block;
+  border-radius: 32px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--light-color);
+  text-align: center;
+  font-size: 12px;
+  padding: 8px 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.list_page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.list_page__search {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: large;
+  border-radius: 20px;
+  border: none;
+  outline: 1px solid var(--primary-color-dark);
+}
+
+.list_page__search:focus-visible {
+  outline: 1px solid var(--primary-color-dark);
 }

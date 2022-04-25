@@ -18,7 +18,7 @@ const ListPage = (): JSX.Element => {
   ): void => {
     const value = event.target.value;
     setFilter(value);
-    if (value.length > 1) {
+    if (value.length > 0) {
       setCoinsFiltered(
         coins.filter((coin) =>
           coin.name.toLowerCase().includes(value.toLowerCase())
@@ -29,23 +29,25 @@ const ListPage = (): JSX.Element => {
     }
   };
   return (
-    <div>
+    <div className="list_page">
       <h1 className="coin__title">Investorpredict</h1>
       Conoce el valor de las criptomonedas para mañana ;)
       <input
-        className="coin__input"
+        className="list_page__search"
         type="text"
         name="name"
-        placeholder="Busca tu criptomoneda"
+        placeholder="Busca tu criptomoneda, ejemplo: bitcoin"
         onChange={onChangeFilterHandler}
         value={filter}
       />
       <br />
+      {coinsFiltered.length=== 0 && coins.length!== 0 && filter !== "" && <div>No encontramos tu criptomoneda :(</div>}
       <div className="list">
         {coinsFiltered.map((coin) => (
           <React.Fragment key={coin.id}>
-            <Link to={`/${environment.urlBase}${coin.id}`}>{coin.name}</Link>
-            <br />
+            <Link className="link" to={`/${environment.urlBase}${coin.id}`}>
+              {coin.name}
+            </Link>
           </React.Fragment>
         ))}
       </div>
