@@ -15,7 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-color);
-  padding: 4px;
+  padding: 0;
 }
 
 code {
@@ -23,27 +23,19 @@ code {
     monospace;
 }
 
-.title {
-  background-color: var(--primary-color);
-  color: var(--light-color);
-  padding: 16px;
-  margin: 16px;
-  border-radius: 48px;
+.center_xy {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.title__image {
-  background-color: var(--light-color);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-}
-
-.title__text {
-  padding-left: 16px;
-  font-size: 24px;
+.coin_page__title {
+  width: 100%;
+  color: var(--light-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .estimation_coin {
@@ -175,6 +167,11 @@ code {
   cursor: pointer;
 }
 
+.link--light {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
 
 .list_page {
   display: flex;
@@ -208,4 +205,71 @@ code {
   border-radius: 8px;
   text-align: center;
   min-width: 200px;
+}
+
+.coin_page__header {
+  background-color: var(--primary-color);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 4px;
+}
+
+.coin_page__history {
+  background-image: linear-gradient(to bottom, var(--primary-color) 50%, var(--light-color) 50%);
+  box-sizing: border-box;
+  padding: 16px 4px;
+}
+
+.coin_page__header_history {
+  background-color: var(--primary-color);
+}
+
+.coin_page__subtitle {
+  width: 100%;
+  text-align: center;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.coin_page__title_image {
+  background-color: var(--light-color);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.coin_page__title_text {
+  padding-left: 16px;
+  font-size: 24px;
+}
+
+.estimation_coin__text {
+  text-align: center;
+  padding: 24px 4px;
+}
+
+.card {
+  background: #fff;
+  max-width: 1000px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  box-shadow: 0 0 20px 8px #d0d0d088;
+  border-radius: 20px;
+}
+
+.coin_page__footer {
+  background-color: var(--primary-color);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 4px;
+  text-align: center;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  vertical-align: top;
 }

@@ -44,14 +44,18 @@ const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
   return (
     <div className="estimation_coin">
       <h2 className="estimation_coin__title">Pronóstico</h2>
+      <div className="estimation_coin__text">
       A continuación, te presentamos posibles valores para los próximos 7 días,
       con distintos métodos, cada método tiene un margen de confiabilidad:
-      <br />
-      <br />
+      </div>
+      <div className="estimation_coin__text">
       <span className="estimation_coin__badge">
         Valor hoy ${valueToday.toFixed(2)} USD
       </span>
-      {graphData && <GraphLine {...graphData} />}
+      </div>
+      <div className="card">
+        {graphData && <GraphLine {...graphData} />}
+      </div>
       <div className="estimation_coin__container">
         <table className="estimation_coin__table">
           <thead>

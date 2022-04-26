@@ -27,7 +27,7 @@ Abrir [http://localhost:3000/investorpredict](http://localhost:3000/investorpred
 ![Vista de buscar criptomoneda](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/buscar.jpg)
 
 ### **Vista de una criptomoneda**	
-![Vista de una criptomoneda](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_cripto.png)
+![Vista de una criptomoneda](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_cripto.jpg)
 
 ### **Vista del pronóstico**
-![Vista del pronóstico](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_pronostico.png)
+![Vista del pronóstico](https://github.com/jeissonmgz/investorpredict/blob/main/static/img/ver_pronostico.jpg)
