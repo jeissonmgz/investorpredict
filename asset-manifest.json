@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/investorpredict/static/css/main.63537441.css",
-    "main.js": "/investorpredict/static/js/main.c7ca4f26.js",
+    "main.css": "/investorpredict/static/css/main.b5459402.css",
+    "main.js": "/investorpredict/static/js/main.8cdd306c.js",
     "index.html": "/investorpredict/index.html",
-    "main.63537441.css.map": "/investorpredict/static/css/main.63537441.css.map",
-    "main.c7ca4f26.js.map": "/investorpredict/static/js/main.c7ca4f26.js.map"
+    "main.b5459402.css.map": "/investorpredict/static/css/main.b5459402.css.map",
+    "main.8cdd306c.js.map": "/investorpredict/static/js/main.8cdd306c.js.map"
   },
   "entrypoints": [
-    "static/css/main.63537441.css",
-    "static/js/main.c7ca4f26.js"
+    "static/css/main.b5459402.css",
+    "static/js/main.8cdd306c.js"
   ]
 }
