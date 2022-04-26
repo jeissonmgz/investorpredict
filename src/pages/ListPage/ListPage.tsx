@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { CoinService, ICoin } from "../../services/coins.services";
+import { CoinService, ICoin } from "../../services";
 import ScrollList from "./components/ScrollList";
 
 const ListPage = (): JSX.Element => {

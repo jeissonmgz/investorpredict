@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ICoinDollarTime } from "../../../services/coins.services";
+import { ICoinDollarTime } from "../../../services";
 import { GraphLine, IGraphLine } from "../../../components/Graph/GraphLine";
 
 interface IGraphCoin {

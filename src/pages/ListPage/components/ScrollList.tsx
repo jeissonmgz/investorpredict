@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { environment } from "../../../environment/environment";
-import { ICoin } from "../../../services/coins.services";
+import { ICoin } from "../../../services";
 
 interface IScrollList {
   coins: ICoin[];
