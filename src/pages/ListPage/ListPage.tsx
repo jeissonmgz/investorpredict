@@ -1,32 +1,10 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import { CoinService, ICoin } from "../../services";
+import React from "react";
 import ScrollList from "./components/ScrollList";
+import { ListPageLogic } from "./ListPage.logic";
 
 const ListPage = (): JSX.Element => {
-  const [coins, setCoins] = useState<ICoin[]>([]);
-  const [coinsFiltered, setCoinsFiltered] = useState<ICoin[]>([]);
-  const [filter, setFilter] = useState("");
-  useEffect(() => {
-    CoinService.getCoins().then((result) => {
-      setCoins(result);
-    });
-  }, []);
-
-  const onChangeFilterHandler = (
-    event: ChangeEvent<HTMLInputElement>
-  ): void => {
-    const value = event.target.value;
-    setFilter(value);
-    if (value.length > 0) {
-      setCoinsFiltered(
-        coins.filter((coin) =>
-          coin.name.toLowerCase().includes(value.toLowerCase())
-        )
-      );
-    } else {
-      setCoinsFiltered([]);
-    }
-  };
+  const { onChangeFilterHandler, filter, coinsFiltered, coins } =
+    ListPageLogic();
   return (
     <div className="list_page">
       <h1 className="coin__title">Investorpredict</h1>

@@ -1,28 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { environment } from "../../environment/environment";
-import { CoinService, ICoinDetail, ICoinDollarTime } from "../../services";
+import { CoinPageLogic } from "./CoinPage.logic";
 import EstimationCoin from "./components/EstimationCoin";
 import GraphCoin from "./components/GraphCoin";
 
 const CoinPage = (): JSX.Element => {
-  const [coin, setCoin] = useState<ICoinDetail>();
-  const { coinId } = useParams();
-  const [coinTime, setCoinTime] = useState<ICoinDollarTime>();
-
-  useEffect(() => {
-    if (coinId !== undefined && coinId !== coin?.id) {
-      CoinService.getCoinValueTime(`${coinId}`).then((result) => {
-        setCoinTime(result);
-      });
-
-      CoinService.getCoinDetail(`${coinId}`).then((result) => {
-        setCoin(result);
-      });
-    }
-  }, [coinId, coin?.id]);
-
+  const { coin, coinTime } = CoinPageLogic();
   return (
     <div className="coin_page">
       <div className="coin_page__header_history">
