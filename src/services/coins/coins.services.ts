@@ -1,6 +1,6 @@
-import { environment } from "../environment/environment";
-import { Http } from "./client/Http";
-import { ICoin, ICoinDetail, ICoinDollarTime } from "./models/coins.models";
+import { environment } from "../../environment/environment";
+import { Http } from "../client/Http";
+import { ICoin, ICoinDetail, ICoinDollarTime } from "../models/coins.models";
 
 const getCoins = (): Promise<ICoin[]> => {
   return Http.get<ICoin[]>(`${environment.urlApi}/coins/list`);

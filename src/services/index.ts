@@ -1,2 +1,2 @@
 export * from "./models/coins.models";
-export * from "./coins.services";
+export * from "./coins/coins.services";
