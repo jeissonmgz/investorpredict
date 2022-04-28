@@ -153,9 +153,7 @@ code {
 .link {
   display: inline-block;
   border-radius: 32px;
-  background-color: var(--primary-color);
   border: none;
-  color: var(--light-color);
   text-align: center;
   font-size: 12px;
   padding: 8px 16px;
@@ -167,7 +165,12 @@ code {
   cursor: pointer;
 }
 
-.link--light {
+.link--primary {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.link--secundary {
   background-color: var(--light-color);
   color: var(--primary-color);
 }

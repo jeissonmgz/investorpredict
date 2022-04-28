@@ -1,7 +1,6 @@
 import React from "react";
+import { HyperLink } from "../../components";
 
-import { Link } from "react-router-dom";
-import { environment } from "../../environment/environment";
 import { CoinPageLogic } from "./CoinPage.logic";
 import EstimationCoin from "./components/EstimationCoin";
 import GraphCoin from "./components/GraphCoin";
@@ -12,9 +11,9 @@ const CoinPage = (): JSX.Element => {
     <div className="coin_page">
       <div className="coin_page__header_history">
         <header className="coin_page__header">
-          <Link className="link link--light" to={`/${environment.urlBase}`}>
+          <HyperLink type="secundary" to=''>
             Volver
-          </Link>
+          </HyperLink>
           <div className="coin_page__title">
             <img
               className="coin_page__title_image"
@@ -34,9 +33,9 @@ const CoinPage = (): JSX.Element => {
       </div>
       {coinTime && <EstimationCoin coinTime={coinTime} />}
       <footer className="coin_page__footer">
-        <Link className="link link--light" to={`/${environment.urlBase}`}>
+        <HyperLink type="secundary" to=''>
           Busca más criptomonedas
-        </Link>
+        </HyperLink>
       </footer>
     </div>
   );

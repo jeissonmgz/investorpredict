@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Link } from "react-router-dom";
-import { environment } from "../../../environment/environment";
+import { HyperLink } from "../../../components";
+
 import { ICoin } from "../../../services";
 
 interface IScrollList {
@@ -45,9 +45,9 @@ const ScrollList = ({ coins }: IScrollList) => {
         >
           {coinShow.map((coin) => (
             <React.Fragment key={coin.id}>
-              <Link className="link" to={`/${environment.urlBase}${coin.id}`}>
+              <HyperLink to={`${coin.id}`}>
                 {coin.name}
-              </Link>
+              </HyperLink>
             </React.Fragment>
           ))}
         </InfiniteScroll>
