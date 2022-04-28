@@ -11,7 +11,7 @@ const CoinPage = (): JSX.Element => {
     <div className="coin_page">
       <div className="coin_page__header_history">
         <header className="coin_page__header">
-          <HyperLink type="secundary" to=''>
+          <HyperLink type="secundary" to="">
             Volver
           </HyperLink>
           <div className="coin_page__title">
@@ -33,7 +33,7 @@ const CoinPage = (): JSX.Element => {
       </div>
       {coinTime && <EstimationCoin coinTime={coinTime} />}
       <footer className="coin_page__footer">
-        <HyperLink type="secundary" to=''>
+        <HyperLink type="secundary" to="">
           Busca más criptomonedas
         </HyperLink>
       </footer>

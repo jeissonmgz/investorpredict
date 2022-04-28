@@ -45,9 +45,7 @@ const ScrollList = ({ coins }: IScrollList) => {
         >
           {coinShow.map((coin) => (
             <React.Fragment key={coin.id}>
-              <HyperLink to={`${coin.id}`}>
-                {coin.name}
-              </HyperLink>
+              <HyperLink to={`${coin.id}`}>{coin.name}</HyperLink>
             </React.Fragment>
           ))}
         </InfiniteScroll>
