@@ -7,7 +7,7 @@ jest.mock("react", () => {
   React.lazy = (p: any) => {
     p().then((r: any) => importSpy(Object.keys(r)[0]));
     p();
-    return ()=> <div />
+    return () => <div />;
   };
   return React;
 });
