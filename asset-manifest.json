@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/investorpredict/static/css/main.b5459402.css",
-    "main.js": "/investorpredict/static/js/main.8cdd306c.js",
+    "main.css": "/investorpredict/static/css/main.b6fb7046.css",
+    "main.js": "/investorpredict/static/js/main.7d6ce8fa.js",
+    "static/js/849.e699a935.chunk.js": "/investorpredict/static/js/849.e699a935.chunk.js",
+    "static/js/235.9c627262.chunk.js": "/investorpredict/static/js/235.9c627262.chunk.js",
+    "static/js/497.3a285cfc.chunk.js": "/investorpredict/static/js/497.3a285cfc.chunk.js",
+    "static/js/254.3a6b1ac0.chunk.js": "/investorpredict/static/js/254.3a6b1ac0.chunk.js",
     "index.html": "/investorpredict/index.html",
-    "main.b5459402.css.map": "/investorpredict/static/css/main.b5459402.css.map",
-    "main.8cdd306c.js.map": "/investorpredict/static/js/main.8cdd306c.js.map"
+    "main.b6fb7046.css.map": "/investorpredict/static/css/main.b6fb7046.css.map",
+    "main.7d6ce8fa.js.map": "/investorpredict/static/js/main.7d6ce8fa.js.map",
+    "849.e699a935.chunk.js.map": "/investorpredict/static/js/849.e699a935.chunk.js.map",
+    "235.9c627262.chunk.js.map": "/investorpredict/static/js/235.9c627262.chunk.js.map",
+    "497.3a285cfc.chunk.js.map": "/investorpredict/static/js/497.3a285cfc.chunk.js.map",
+    "254.3a6b1ac0.chunk.js.map": "/investorpredict/static/js/254.3a6b1ac0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5459402.css",
-    "static/js/main.8cdd306c.js"
+    "static/css/main.b6fb7046.css",
+    "static/js/main.7d6ce8fa.js"
   ]
 }
