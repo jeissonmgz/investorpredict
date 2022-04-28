@@ -61,9 +61,9 @@ code {
 }
 
 .estimation_coin__badge {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-dark);
   padding: 8px 16px;
-  border-radius: 16px;
+  border-radius: 16px 8px;
   color: var(--light-color);
   font-weight: bold;
 }

@@ -1,21 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { environment } from "./environment/environment";
-import CoinPage from "./pages/CoinPage/CoinPage";
-import ListPage from "./pages/ListPage/ListPage";
+import RouterApp from "./routing/RouterApp";
 
 const App = (): JSX.Element => {
-  const { urlBase } = environment;
-  return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path={`${urlBase}:coinId`} element={<CoinPage />} />
-          <Route path={`${urlBase}`} element={<ListPage />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+  return <RouterApp />;
 };
 
 export default App;

@@ -12,6 +12,7 @@ Se consume la api publica directamente de [https://www.coingecko.com/](https://w
 
 En el directorio del proyecto:
 
+### `npm install`
 ### `npm start`
 
 Esto corre la aplicación en modo dev.\

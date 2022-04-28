@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { HyperLink } from "../../../components";
+import { HyperLink, Loading } from "../../../components";
 
 import { ICoin } from "../../../services";
 
@@ -14,7 +14,7 @@ const ScrollList = ({ coins }: IScrollList) => {
   const [coinShow, setCoinShow] = useState<ICoin[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const getLazyItems = () => {
+  const getLazyItems = useCallback(() => {
     setTimeout(() => {
       setPage((page) => {
         const pagePlusItems = page + ITEMS_PER_PAGE;
@@ -23,8 +23,8 @@ const ScrollList = ({ coins }: IScrollList) => {
         setCoinShow(coins.slice(0, newPages));
         return newPages;
       });
-    }, 1000);
-  };
+    }, 100);
+  }, [coins]);
 
   useEffect(() => {
     setLoading(true);
@@ -32,7 +32,7 @@ const ScrollList = ({ coins }: IScrollList) => {
     setCoinShow([]);
     setLoading(false);
     getLazyItems();
-  }, [coins]);
+  }, [coins, getLazyItems]);
 
   return (
     <div className="list_page__container">
@@ -41,7 +41,7 @@ const ScrollList = ({ coins }: IScrollList) => {
           dataLength={coinShow.length}
           next={getLazyItems}
           hasMore={coinShow.length !== coins.length}
-          loader={<div className="loader">Loading...</div>}
+          loader={<Loading />}
         >
           {coinShow.map((coin) => (
             <React.Fragment key={coin.id}>

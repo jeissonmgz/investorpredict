@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Card } from "../../../components";
 import { GraphLine, IGraphLine } from "../../../components/Graph/GraphLine";
 import { ICoinDollarTime } from "../../../services";
 import { IRegresion, Regresion } from "../../../utils/regresion";
@@ -11,16 +12,12 @@ interface IEstimationCoin {
 const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
   const [posibleValue, setPosibleValue] = useState<IRegresion[]>([]);
   const [graphData, setGraphData] = useState<IGraphLine>();
-  const nextDays = Time.getNextDays(7);
+  const nextDays = useMemo(() => Time.getNextDays(7), []);
 
-  const colors = [
-    "#F272A1",
-    "#6D5DA6",
-    "#232B59",
-    "#60BFBF",
-    "#F2958D",
-    "#593E25",
-  ];
+  const colors = useMemo(
+    () => ["#F272A1", "#6D5DA6", "#232B59", "#60BFBF", "#F2958D", "#593E25"],
+    []
+  );
 
   const valueToday = coinTime.prices[coinTime.prices.length - 1][1];
   useEffect(() => {
@@ -39,7 +36,7 @@ const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
         values: r.values,
       })),
     });
-  }, [coinTime]);
+  }, [coinTime, nextDays, colors]);
 
   return (
     <div className="estimation_coin">
@@ -54,7 +51,9 @@ const EstimationCoin = ({ coinTime }: IEstimationCoin) => {
           Valor hoy ${valueToday.toFixed(2)} USD
         </span>
       </div>
-      <div className="card">{graphData && <GraphLine {...graphData} />}</div>
+      <Card>
+        <>{graphData && <GraphLine {...graphData} />}</>
+      </Card>
       <div className="estimation_coin__container">
         <table className="estimation_coin__table">
           <thead>
