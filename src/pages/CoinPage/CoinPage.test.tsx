@@ -31,12 +31,12 @@ describe("<CoinPage />", () => {
       coinTime: {},
     });
     render(<CoinPage />);
-  })
-    it("should render when coin is empty", () => {
-      logicSpy.mockReturnValue({
-        coin: undefined,
-        coinTime: {},
-      });
-      render(<CoinPage />);
-    })
+  });
+  it("should render when coin is empty", () => {
+    logicSpy.mockReturnValue({
+      coin: undefined,
+      coinTime: {},
+    });
+    render(<CoinPage />);
+  });
 });
