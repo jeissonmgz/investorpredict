@@ -2,7 +2,6 @@
 Esta aplicación consiste en predecir los valores para las criptomonedas en dolares:
 Abrir demo [https://jeissonmgz.github.io/investorpredict/](https://jeissonmgz.github.io/investorpredict/) para ver en el navegador.
 ## Tech Stack
-
 **Client:** React, Typescript, Javascript
 
 ## API
@@ -17,6 +16,11 @@ En el directorio del proyecto:
 
 Esto corre la aplicación en modo dev.\
 Abrir [http://localhost:3000/investorpredict](http://localhost:3000/investorpredict) to view it in the browser.
+
+## Pruebas unitarias
+
+En el directorio del proyecto:
+### `npm run test`
 
 
 ## Screenshots

@@ -2,6 +2,8 @@ import React from "react";
 
 import { render } from "@testing-library/react";
 
+const useStateSpy = jest.fn();
+
 jest.mock("react", () => {
   const React = jest.requireActual("react");
   React.useCallback = (p1: any, p2: any) => {
@@ -11,10 +13,10 @@ jest.mock("react", () => {
     return p1();
   };
   React.useState = (p: any) => [
-    p,
+    useStateSpy(),
     (p1: any) => {
       if (typeof p1 === "function") {
-        p1();
+        p1(1);
       }
     },
   ];
@@ -37,7 +39,25 @@ import ScrollList from "./ScrollList";
 
 describe("<ScrollList />", () => {
   it("should render", () => {
+    useStateSpy
+      .mockReturnValueOnce(1)
+      .mockReturnValueOnce([
+        { id: 1, name: "name" },
+        { id: 2, name: "name" },
+      ])
+      .mockReturnValueOnce(false);
     render(<ScrollList coins={[]} />);
+    jest.runAllTimers();
+  });
+  it("should render", () => {
+    useStateSpy
+      .mockReturnValueOnce(1)
+      .mockReturnValueOnce([1])
+      .mockReturnValueOnce(true);
+    const coins = Array(245)
+      .fill(0)
+      .map((e, i) => ({ id: i + "1", name: "name", symbol: "" }));
+    render(<ScrollList coins={coins} />);
     jest.runAllTimers();
   });
 });
