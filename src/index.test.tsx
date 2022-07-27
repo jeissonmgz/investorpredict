@@ -7,7 +7,7 @@ jest.mock("react-dom/client", () => ({
   }),
 }));
 
-jest.mock("./App", () => (props: any) => <div data-testid="App" />);
+jest.mock("./application/App", () => (props: any) => <div data-testid="App" />);
 
 jest.mock("./index.css", () => {});
 

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Loading } from "../components";
-import { environment } from "../environment/environment";
+import { environment } from "../../environment/environment";
 import { routes } from "./routes";
 
 const NotFoundLazy = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));

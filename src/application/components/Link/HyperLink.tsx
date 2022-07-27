@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { environment } from "../../environment/environment";
+import { environment } from "../../../environment/environment";
 
 interface IHyperLink {
   to: string;

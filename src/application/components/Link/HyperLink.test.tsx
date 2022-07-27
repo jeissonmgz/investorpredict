@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-jest.mock("../../environment/environment", () => ({
+jest.mock("../../../environment/environment", () => ({
   environment: {
     urlBase: "",
   },

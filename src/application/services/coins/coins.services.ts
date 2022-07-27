@@ -1,4 +1,4 @@
-import { environment } from "../../environment/environment";
+import { environment } from "../../../environment/environment";
 import { Http } from "../client/Http";
 import { ICoin, ICoinDetail, ICoinDollarTime } from "../models/coins.models";
 

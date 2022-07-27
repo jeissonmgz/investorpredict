@@ -27,7 +27,7 @@ jest.mock("react-router-dom", () => ({
   Suspense: () => <div data-testid="Suspense"></div>,
 }));
 
-jest.mock("../environment/environment", () => ({
+jest.mock("../../environment/environment", () => ({
   environment: {
     urlBase: "",
   },

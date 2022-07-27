@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { CoinService, ICoinDetail, ICoinDollarTime } from "../../services";
 import { useNavigate, useParams } from "react-router-dom";
-import { environment } from "../../environment/environment";
+import { environment } from "../../../environment/environment";
 
 interface ICoinPageLogic {
   coin: ICoinDetail | undefined;

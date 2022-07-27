@@ -1,4 +1,4 @@
-jest.mock("../../environment/environment", () => ({
+jest.mock("../../../environment/environment", () => ({
   environment: {
     urlApi: "url",
   },

@@ -21,7 +21,7 @@ jest.mock("react-router-dom", () => ({
   useParams: () => ({ coinId: "1" }),
 }));
 
-jest.mock("../../environment/environment", () => ({
+jest.mock("../../../environment/environment", () => ({
   environment: {
     urlBase: "",
   },
