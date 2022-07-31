@@ -9,7 +9,7 @@ const ListPage = (): JSX.Element => {
   return (
     <div className="list_page">
       <h1 className="coin__title">Investorpredict</h1>
-      Conoce el valor de las criptomonedas para mañana ;)
+      Conoce el valor de las criptomonedas de la proxíma semana &#129297;
       <Input
         type="text"
         placeholder="Busca tu criptomoneda, ejemplo: bitcoin"
