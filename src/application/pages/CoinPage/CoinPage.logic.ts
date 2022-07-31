@@ -1,37 +1,27 @@
 import { useCallback, useEffect, useState } from "react";
-import { CoinService, ICoinDetail, ICoinDollarTime } from "../../services";
 import { useNavigate, useParams } from "react-router-dom";
 import { environment } from "../../../environment/environment";
+import { domain } from "../../../core";
+import { Coin } from "../../../core/models";
 
 interface ICoinPageLogic {
-  coin: ICoinDetail | undefined;
-  coinTime: ICoinDollarTime | undefined;
+  coin: Coin | undefined;
 }
 
 export const CoinPageLogic = (): ICoinPageLogic => {
-  const [coin, setCoin] = useState<ICoinDetail>();
+  const [coin, setCoin] = useState<Coin>();
   const { coinId } = useParams();
-  const [coinTime, setCoinTime] = useState<ICoinDollarTime>();
   const navigate = useNavigate();
 
-  const loadCoinTime = useCallback(async () => {
-    const response = await CoinService.getCoinValueTime(`${coinId}`);
-    setCoinTime(response);
-  }, [coinId]);
-
-  const loadCoinDetail = useCallback(async () => {
-    const response = await CoinService.getCoinDetail(`${coinId}`);
-    setCoin(response);
-  }, [coinId]);
 
   const loadCoin = useCallback(async () => {
     try {
-      await loadCoinTime();
-      await loadCoinDetail();
+      const coinDetails = await domain.getCoinPredictionInUSDUseCase(coinId as string);
+      setCoin(coinDetails);
     } catch (e) {
       navigate(`/${environment.urlBase}no_encontrado`);
     }
-  }, [loadCoinTime, loadCoinDetail, navigate]);
+  }, [navigate, coinId]);
 
   useEffect(() => {
     if (coinId !== undefined && coinId !== coin?.id) {
@@ -40,7 +30,6 @@ export const CoinPageLogic = (): ICoinPageLogic => {
   }, [coinId, coin?.id, loadCoin]);
 
   return {
-    coin,
-    coinTime,
+    coin
   };
 };

@@ -56,7 +56,7 @@ describe("<ScrollList />", () => {
       .mockReturnValueOnce(true);
     const coins = Array(245)
       .fill(0)
-      .map((e, i) => ({ id: i + "1", name: "name", symbol: "" }));
+      .map((e, i) => ({ id: i + "1", name: "name", symbol: "" } as any));
     render(<ScrollList coins={coins} />);
     jest.runAllTimers();
   });

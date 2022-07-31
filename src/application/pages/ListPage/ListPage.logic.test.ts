@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent } from "react";
 
 const useStateSpy = jest.fn();
 jest.mock("react", () => ({
@@ -9,12 +9,13 @@ jest.mock("react", () => ({
   useState: (p: any) => [useStateSpy(p), () => {}],
 }));
 
-const CoinServiceSpy = jest.fn();
-jest.mock("../../services", () => ({
-  ICoin: {},
-  CoinService: {
-    getCoins: CoinServiceSpy,
-  },
+const getCoinsUseCaseSpy = jest.fn();
+const findCoinUseCaseSpy = jest.fn();
+jest.mock("../../../core", () => ({
+  domain: {
+    getCoinsUseCase: getCoinsUseCaseSpy,
+    findCoinUseCase: findCoinUseCaseSpy
+  }
 }));
 
 import { ListPageLogic } from "./ListPage.logic";
@@ -25,7 +26,7 @@ describe("ListPageLogic", () => {
       .mockReturnValueOnce([{ name: "bitcoin" }])
       .mockReturnValueOnce([{ name: "bitcoin" }])
       .mockReturnValueOnce("");
-    CoinServiceSpy.mockResolvedValue(true);
+      getCoinsUseCaseSpy.mockResolvedValue(true);
     const { onChangeFilterHandler } = ListPageLogic();
     onChangeFilterHandler({
       target: { value: "b" },
@@ -36,7 +37,7 @@ describe("ListPageLogic", () => {
       .mockReturnValueOnce([])
       .mockReturnValueOnce([])
       .mockReturnValueOnce("");
-    CoinServiceSpy.mockResolvedValue(true);
+      getCoinsUseCaseSpy.mockResolvedValue(true);
     const { onChangeFilterHandler } = ListPageLogic();
     onChangeFilterHandler({
       target: { value: "" },

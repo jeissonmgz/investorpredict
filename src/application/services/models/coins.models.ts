@@ -1,16 +1,16 @@
-export interface ICoin {
+export interface ICoinResponse {
   id: string;
   symbol: string;
   name: string;
 }
 
-export interface ICoinDollarTime {
+export interface ICoinDollarTimeResponse {
   market_caps: number[][];
   prices: number[][];
   total_volumes: number[][];
 }
 
-export interface ICoinDetail {
+export interface ICoinDetailResponse {
   id: string;
   symbol: string;
   name: string;

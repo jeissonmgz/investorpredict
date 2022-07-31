@@ -1,17 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Coin } from "../../../../core/models";
 import { HyperLink, Loading } from "../../../components";
 
-import { ICoin } from "../../../services";
 
 interface IScrollList {
-  coins: ICoin[];
+  coins: Coin[];
 }
 
 const ScrollList = ({ coins }: IScrollList) => {
   const ITEMS_PER_PAGE = 200;
   const [, setPage] = useState(0);
-  const [coinShow, setCoinShow] = useState<ICoin[]>([]);
+  const [coinShow, setCoinShow] = useState<Coin[]>([]);
   const [loading, setLoading] = useState(false);
 
   const getLazyItems = useCallback(() => {

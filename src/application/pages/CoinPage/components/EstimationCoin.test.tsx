@@ -58,10 +58,16 @@ describe("<EstimationCoin />", () => {
       .mockReturnValueOnce({});
     render(
       <EstimationCoin
-        coinTime={{
-          market_caps: [],
-          prices: [[0, 0]],
-          total_volumes: [],
+        coinValues={[
+          2
+        ]}
+        historyPrediction={{
+          days: ['1'],
+          predictions: [{
+            nameMethod: 'nameMethod',
+            reliability: 100,
+            values: [1,2,3]
+          }]
         }}
       />
     );

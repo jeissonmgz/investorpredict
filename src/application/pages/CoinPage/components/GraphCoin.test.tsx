@@ -25,11 +25,12 @@ describe("<GraphCoin />", () => {
   it("should initialize", () => {
     render(
       <GraphCoin
-        coinTime={{
-          market_caps: [],
-          prices: [[0, 0]],
-          total_volumes: [],
-        }}
+        coinTime={[
+          {
+            day: 'a',
+            value: 1
+          }
+        ]}
       />
     );
   });

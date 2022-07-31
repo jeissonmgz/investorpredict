@@ -1,19 +1,21 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { CoinService, ICoin } from "../../services";
+import { domain } from "../../../core";
+import { Coin } from "../../../core/models";
 
 interface IListPageLogic {
   onChangeFilterHandler: (event: ChangeEvent<HTMLInputElement>) => void;
   filter: string;
-  coinsFiltered: ICoin[];
-  coins: ICoin[];
+  coinsFiltered: Coin[];
+  coins: Coin[];
 }
 
 export const ListPageLogic = (): IListPageLogic => {
-  const [coins, setCoins] = useState<ICoin[]>([]);
-  const [coinsFiltered, setCoinsFiltered] = useState<ICoin[]>([]);
+  const [coins, setCoins] = useState<Coin[]>([]);
+  const [coinsFiltered, setCoinsFiltered] = useState<Coin[]>([]);
   const [filter, setFilter] = useState("");
+  
   useEffect(() => {
-    CoinService.getCoins().then((result) => {
+    domain.getCoinsUseCase().then((result) => {
       setCoins(result);
     });
   }, []);
@@ -23,16 +25,9 @@ export const ListPageLogic = (): IListPageLogic => {
   ): void => {
     const value = event.target.value;
     setFilter(value);
-    if (value.length > 0) {
-      setCoinsFiltered(
-        coins.filter((coin) =>
-          coin.name.toLowerCase().includes(value.toLowerCase())
-        )
-      );
-    } else {
-      setCoinsFiltered([]);
-    }
+    setCoinsFiltered(domain.findCoinUseCase(value, coins));
   };
+
   return {
     onChangeFilterHandler,
     filter,

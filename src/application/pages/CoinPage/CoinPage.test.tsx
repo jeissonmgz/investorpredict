@@ -27,6 +27,8 @@ describe("<CoinPage />", () => {
         image: {
           large: "image",
         },
+        predictionsInUSD: [],
+        pricesLastDaysInUSD : [{value:2}]
       },
       coinTime: {},
     });
@@ -34,8 +36,7 @@ describe("<CoinPage />", () => {
   });
   it("should render when coin is empty", () => {
     logicSpy.mockReturnValue({
-      coin: undefined,
-      coinTime: {},
+      coin: undefined
     });
     render(<CoinPage />);
   });

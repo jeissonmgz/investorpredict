@@ -1,0 +1,1 @@
+export const NUMBER_DAYS_TO_PREDICT = 7;

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { ICoinDollarTime } from "../../../services";
+import { HistoryPrice } from "../../../../core/models";
 import { GraphLine, IGraphLine } from "../../../components/Graph/GraphLine";
 
 interface IGraphCoin {
-  coinTime: ICoinDollarTime;
+  coinTime: HistoryPrice[];
 }
 
 const GraphCoin = ({ coinTime }: IGraphCoin): JSX.Element => {
   const [graphData, setGraphData] = useState<IGraphLine>();
 
-  const updateGraph = (coinPrices: ICoinDollarTime) => {
-    if (coinPrices) {
-      const labelDates = coinPrices.prices.map((c) =>
-        new Date(c[0]).toLocaleDateString()
+  const updateGraph = (coinTimeValues: HistoryPrice[]) => {
+    if (coinTimeValues) {
+      const labelDates = coinTimeValues.map(c =>
+        c.day
       );
       setGraphData({
         name: "Variación en el mercado",
@@ -22,7 +22,7 @@ const GraphCoin = ({ coinTime }: IGraphCoin): JSX.Element => {
             name: "USD",
             backgroundColor: "#3DF29D",
             borderColor: "#3DF29D",
-            values: coinPrices.prices.map((c) => c[1]),
+            values: coinTimeValues.map(c=> c.value),
           },
         ],
       });

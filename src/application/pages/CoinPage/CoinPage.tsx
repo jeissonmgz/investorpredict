@@ -6,7 +6,7 @@ import EstimationCoin from "./components/EstimationCoin";
 import GraphCoin from "./components/GraphCoin";
 
 const CoinPage = (): JSX.Element => {
-  const { coin, coinTime } = CoinPageLogic();
+  const { coin } = CoinPageLogic();
   return (
     <div className="coin_page">
       <div className="coin_page__header_history">
@@ -17,7 +17,7 @@ const CoinPage = (): JSX.Element => {
           <div className="coin_page__title">
             <img
               className="coin_page__title_image"
-              src={coin?.image.large}
+              src={coin?.image}
               alt="logo coin"
             />
             <h1 className="coin_page__title_text">{coin?.name}</h1>
@@ -28,12 +28,12 @@ const CoinPage = (): JSX.Element => {
             <>
               <h2 className="coin_page__subtitle">Historial</h2>
               El historial de los últimos 90 días es:
-              {coinTime && <GraphCoin coinTime={coinTime} />}
+              {coin?.pricesLastDaysInUSD && <GraphCoin coinTime={coin.pricesLastDaysInUSD} />}
             </>
           </Card>
         </section>
       </div>
-      {coinTime && <EstimationCoin coinTime={coinTime} />}
+      {coin?.pricesLastDaysInUSD && coin.predictionsInUSD && <EstimationCoin coinValues={coin.pricesLastDaysInUSD.map(price => price.value)} historyPrediction={coin.predictionsInUSD} />}
       <footer className="coin_page__footer">
         <HyperLink type="secundary" to="">
           Busca más criptomonedas

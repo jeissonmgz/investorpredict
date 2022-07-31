@@ -1,19 +1,16 @@
 const useStateSpy = jest.fn();
+
 jest.mock("react", () => ({
   useCallback: (p1: any, p2: any) => p1,
   useEffect: (p1: any, p2: any) => p1(),
   useState: (p: any) => [useStateSpy(p), () => {}],
 }));
 
-const getCoinValueTimeSpy = jest.fn();
-const getCoinDetailSpy = jest.fn();
-jest.mock("../../services", () => ({
-  CoinService: {
-    getCoinValueTime: getCoinValueTimeSpy,
-    getCoinDetail: getCoinDetailSpy,
-  },
-  ICoinDetail: {},
-  ICoinDollarTime: {},
+const getCoinPredictionInUSDUseCaseSpy = jest.fn();
+jest.mock("../../../core", () => ({
+  domain: {
+    getCoinPredictionInUSDUseCase: getCoinPredictionInUSDUseCaseSpy
+  }
 }));
 
 jest.mock("react-router-dom", () => ({
@@ -30,15 +27,18 @@ jest.mock("../../../environment/environment", () => ({
 import { CoinPageLogic } from "./CoinPage.logic";
 
 describe("CoinPageLogic", () => {
-  it("should init", () => {
+  it("should init", async () => {
+    getCoinPredictionInUSDUseCaseSpy.mockResolvedValue({})
     useStateSpy.mockReturnValue(undefined);
     CoinPageLogic();
+    await new Promise(process.nextTick);
   });
 
-  it("should init when coin exist and fail service", () => {
+  it("should init when coin exist and fail service", async () => {
     useStateSpy.mockReturnValueOnce({ id: "" });
     useStateSpy.mockReturnValueOnce(undefined);
-    getCoinValueTimeSpy.mockRejectedValue(false);
+    getCoinPredictionInUSDUseCaseSpy.mockRejectedValue(false);
     CoinPageLogic();
+    await new Promise(process.nextTick);
   });
 });
