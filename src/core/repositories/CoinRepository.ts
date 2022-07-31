@@ -1,4 +1,4 @@
-import { Coin, HistoryPrice } from "../models";
+import { Coin, HistoryPrice } from "src/core/models";
 
 export interface CoinRepository {
     getCoins: ()=> Promise<Coin[]>;

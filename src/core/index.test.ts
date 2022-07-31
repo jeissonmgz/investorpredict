@@ -1,7 +1,7 @@
-jest.mock("../application/services", () => ({
+jest.mock("src/app/services", () => ({
   CoinService: {}
 }));
-jest.mock("../application/utils/regresion", () => ({
+jest.mock("src/app/utils/regresion", () => ({
   RegresionUtil: {}
 }));
 jest.mock("./repositories", () => ({

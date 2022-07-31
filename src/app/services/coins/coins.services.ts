@@ -1,6 +1,6 @@
-import { Coin, HistoryPrice } from "../../../core/models";
-import { CoinRepository } from "../../../core/repositories";
-import { environment } from "../../../environment/environment";
+import { Coin, HistoryPrice } from "src/core/models";
+import { CoinRepository } from "src/core/repositories";
+import { environment } from "src/environment/environment";
 import { Http } from "../client/Http";
 import { ICoinResponse, ICoinDetailResponse, ICoinDollarTimeResponse } from "../models/coins.models";
 

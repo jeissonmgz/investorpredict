@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { environment } from "../../../environment/environment";
-import { domain } from "../../../core";
-import { Coin } from "../../../core/models";
+import { environment } from "src/environment/environment";
+import { domain } from "src/core";
+import { Coin } from "src/core/models";
 
 interface ICoinPageLogic {
   coin: Coin | undefined;

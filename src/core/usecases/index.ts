@@ -1,4 +1,4 @@
-import { Repository } from "../repositories";
+import { Repository } from "src/core/repositories";
 import { findCoinUseCase } from "./findCoinUseCase";
 import { getCoinPredictionInUSDUseCase } from "./getCoinPredictionUseCase";
 import { getCoinsUseCase } from "./getCoinsUseCase";

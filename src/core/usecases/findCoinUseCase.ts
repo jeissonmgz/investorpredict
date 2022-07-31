@@ -1,4 +1,4 @@
-import { Coin } from "../models"
+import { Coin } from "src/core/models"
 
 export const findCoinUseCase = () => (coinName: string, coins: Coin[])=> {
     if (coinName.length > 0) {

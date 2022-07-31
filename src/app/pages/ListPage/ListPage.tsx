@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "../../components";
+import { Input } from "src/app/components";
 import ScrollList from "./components/ScrollList";
 import { ListPageLogic } from "./ListPage.logic";
 

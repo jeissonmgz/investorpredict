@@ -1,5 +1,5 @@
 import React from "react";
-import { HyperLink } from "../../components";
+import { HyperLink } from "src/app/components";
 
 const NotFoundPage = () => {
   return (

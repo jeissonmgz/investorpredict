@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "jsx": "react",
+    "baseUrl": ".",
   },
   "include": [
     "src"

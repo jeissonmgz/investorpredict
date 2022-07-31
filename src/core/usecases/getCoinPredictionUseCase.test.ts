@@ -1,9 +1,9 @@
-jest.mock("../models", () => ({
+jest.mock("src/core/models", () => ({
   Coin: {},
   NUMBER_DAYS_TO_PREDICT: 5,
   Prediction: {}
 }));
-jest.mock("../repositories", () => ({
+jest.mock("src/core/repositories", () => ({
   Repository: {
     getCoins: ()=> {}
   }

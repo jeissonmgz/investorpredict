@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, HyperLink } from "../../components";
+import { Card, HyperLink } from "src/app/components";
 
 import { CoinPageLogic } from "./CoinPage.logic";
 import EstimationCoin from "./components/EstimationCoin";

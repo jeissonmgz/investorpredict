@@ -1,5 +1,5 @@
-import { HistoryPrediction, NUMBER_DAYS_TO_PREDICT, Prediction } from "../models";
-import { Repository } from "../repositories";
+import { HistoryPrediction, NUMBER_DAYS_TO_PREDICT, Prediction } from "src/core/models";
+import { Repository } from "src/core/repositories";
 
 const filterPredictionsWithErrors = (predictions: Prediction[]) => 
 predictions.filter(

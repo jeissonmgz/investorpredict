@@ -1,4 +1,4 @@
-import { routes } from "./routes";
+
 import React from "react";
 
 const importSpy = jest.fn();
@@ -10,6 +10,12 @@ jest.mock("react", () => {
   };
   return React;
 });
+
+jest.mock('src/app/components', ()=> ({
+  Loading: ()=> {}
+}))
+
+import { routes } from "./routes";
 
 describe("routes", () => {
   it("should init", () => {

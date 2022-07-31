@@ -1,5 +1,5 @@
-import { CoinService } from "../application/services";
-import { RegresionUtil } from "../application/utils/regresion";
+import { CoinService } from "src/app/services";
+import { RegresionUtil } from "src/app/utils/regresion";
 import { Repository } from "./repositories";
 import { mountUseCases } from "./usecases";
 

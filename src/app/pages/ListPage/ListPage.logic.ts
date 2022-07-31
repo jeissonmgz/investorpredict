@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { domain } from "../../../core";
-import { Coin } from "../../../core/models";
+import { domain } from "src/core";
+import { Coin } from "src/core/models";
 
 interface IListPageLogic {
   onChangeFilterHandler: (event: ChangeEvent<HTMLInputElement>) => void;

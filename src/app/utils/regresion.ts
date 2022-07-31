@@ -1,6 +1,6 @@
 import regression, { DataPoint, Result } from "regression";
-import { Prediction } from "../../core/models";
-import { PredictionRepository } from "../../core/repositories";
+import { Prediction } from "src/core/models";
+import { PredictionRepository } from "src/core/repositories";
 import { Time } from "./time";
   
 const getDataPoint = (array: number[]): DataPoint[] =>

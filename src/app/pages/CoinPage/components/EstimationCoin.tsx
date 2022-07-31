@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { HistoryPrediction } from "../../../../core/models";
-import { Card } from "../../../components";
-import { GraphLine, IGraphLine } from "../../../components/Graph/GraphLine";
+import { HistoryPrediction } from "src/core/models";
+import { Card } from "src/app/components";
+import { GraphLine, IGraphLine } from "src/app/components/Graph/GraphLine";
 
 interface IEstimationCoin {
   coinValues: number[];

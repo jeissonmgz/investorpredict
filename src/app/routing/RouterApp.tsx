@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Loading } from "../components";
-import { environment } from "../../environment/environment";
+import { Loading } from "src/app/components";
+import { environment } from "src/environment/environment";
 import { routes } from "./routes";
 
-const NotFoundLazy = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
+const NotFoundLazy = lazy(() => import("src/app/pages/NotFoundPage/NotFoundPage"));
 
 const RouterApp = () => {
   const { urlBase: prefix } = environment;

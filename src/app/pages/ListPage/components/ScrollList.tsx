@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Coin } from "../../../../core/models";
-import { HyperLink, Loading } from "../../../components";
+import { Coin } from "src/core/models";
+import { HyperLink, Loading } from "src/app/components";
 
 
 interface IScrollList {

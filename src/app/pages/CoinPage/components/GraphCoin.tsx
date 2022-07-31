@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { HistoryPrice } from "../../../../core/models";
-import { GraphLine, IGraphLine } from "../../../components/Graph/GraphLine";
+import { HistoryPrice } from "src/core/models";
+import { GraphLine, IGraphLine } from "src/app/components/Graph/GraphLine";
 
 interface IGraphCoin {
   coinTime: HistoryPrice[];
