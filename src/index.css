@@ -1,10 +1,10 @@
 :root {
-  --primary-color-dark: #1C2135;
-  --primary-color: #5A6794;
-  --primary-color-light: #8794C0;
-  --secundary-color: #D8CDB0;
-  --dark-color: #0D0D0D;
-  --light-color: #E7E9EE;
+  --primary-color-dark: #4338CA;
+  --primary-color: #6366F1;
+  --primary-color-light: #FFF;
+  --secundary-color: #FFF;
+  --dark-color: #000;
+  --light-color: #FFF;
 }
 
 body {
@@ -29,9 +29,43 @@ code {
   justify-content: center;
 }
 
+.list_page__head {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.list_page__head_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section {
+  width: 100%; /* Establece el ancho al 100% del contenedor padre */
+  max-width: 1000px; /* Establece el ancho máximo a 1000px */
+  margin: 0 auto; /* Centra el elemento horizontalmente */
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+
+.section:before, .section:after{
+  display: table;
+  content: " ";
+  clear:both;
+  background: var(--primary-color);
+}
+
+.stripe {
+  background: var(--primary-color);
+  color: var(--light-color);
+  width: 100%;
+}
+
 .coin_page__title {
   width: 100%;
-  color: var(--light-color);
   margin: 0;
   display: flex;
   align-items: center;
@@ -53,11 +87,9 @@ code {
   color: #ffffff;
   text-align: left;
 }
-
-.coin__title {
-  width: 100%;
-  text-align: center;
-  color: var(--primary-color);
+.coin__subtitle {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .estimation_coin__badge {
@@ -150,6 +182,11 @@ code {
   }
 }
 
+.info_result {
+  color: var(--dark-color);
+  text-align: left;
+}
+
 .link {
   display: inline-block;
   border-radius: 32px;
@@ -173,15 +210,28 @@ code {
 .link--secundary {
   background-color: var(--light-color);
   color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 
 .list_page {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.search_coin {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+.search_coin--container {
+  padding-bottom: 24px;
+
 }
 
 .list_page__search {
@@ -191,8 +241,9 @@ code {
   margin: 8px 0;
   box-sizing: border-box;
   font-size: large;
-  border-radius: 20px;
+  border-radius: 16px;
   border: none;
+  background-color: var(--light-color);
   outline: 1px solid var(--primary-color-dark);
 }
 
@@ -243,7 +294,7 @@ code {
 
 .coin_page__title_text {
   padding-left: 16px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .estimation_coin__text {
@@ -261,6 +312,11 @@ code {
   border-radius: 20px;
 }
 
+.w-200 {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
 .coin_page__footer {
   background-color: var(--primary-color);
   width: 100%;
@@ -275,4 +331,78 @@ header {
   border: none;
   outline: none;
   vertical-align: top;
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-left: 0;
+}
+li {
+  counter-increment: item;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+li:before {
+  content: counter(item);
+  background: var(--primary-color);
+  border-radius: 100%;
+  color: white;
+  width: 2em;
+  min-width: 2em;
+  height: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto; 
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 768px) {
+  /* Agrega tus estilos aquí para pantallas de 768px a 991px de ancho */
+  .list_page__head {
+    flex-direction: row;
+    padding: 32px;
+    gap: 18px;
+  }
+}
+
+/* Estilos para dispositivos pequeños de escritorio */
+@media only screen and (min-width: 992px) {
+  .list_page__head {
+    gap: 64px;
+  }
+  .carousel {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto; 
+    column-gap: 10px;
+    row-gap: 15px;
+  }
+  /* Agrega tus estilos aquí para pantallas de 992px a 1199px de ancho */
+}
+
+/* Estilos para dispositivos de escritorio */
+@media only screen and (min-width: 1200px) {
+  /* Agrega tus estilos aquí para pantallas de 1200px o más de ancho */
+  .carousel {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto; 
+    column-gap: 10px;
+    row-gap: 15px;
+  }
+  
 }

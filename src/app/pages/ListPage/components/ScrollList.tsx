@@ -37,6 +37,8 @@ const ScrollList = ({ coins }: IScrollList) => {
   return (
     <div className="list_page__container">
       {!loading && (
+        <>
+        <p className="info_result ">Hemos encontrado <b>{coinShow.length}</b> criptomonedas, haz click y dale un vistazo</p>
         <InfiniteScroll
           dataLength={coinShow.length}
           next={getLazyItems}
@@ -49,6 +51,7 @@ const ScrollList = ({ coins }: IScrollList) => {
             </React.Fragment>
           ))}
         </InfiniteScroll>
+        </>
       )}
     </div>
   );

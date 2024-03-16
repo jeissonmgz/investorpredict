@@ -44,5 +44,5 @@ export const RegresionUtil: PredictionRepository = {
   getExponentialPrediction,
   getLogarithmicPrediction,
   getPowerPrediction,
-  getPolynomialPrediction,
+  getPolynomialPrediction
 };

@@ -28,9 +28,9 @@ Para correr test, correr eñ siguiente comando:
 
 | Color             | Hexadecimal                                                           |
 | ----------------- | ----------------------------------------------------------------------|
-| Primario          | ![#5A6794](https://via.placeholder.com/10/5A6794?text=+) #5A6794      |
-| Primario oscuro   | ![#1C2135](https://via.placeholder.com/10/1C2135?text=+) #1C2135      |
-| Prmario claro     | ![#8794C0](https://via.placeholder.com/10/8794C0?text=+) #8794C0      |
-| Secundario        | ![#D8CDB0](https://via.placeholder.com/10/D8CDB0?text=+) #D8CDB0      |
-| Oscuro            | ![#0D0D0D](https://via.placeholder.com/10/0D0D0D?text=+) #0D0D0D      |
-| Claro             | ![#E7E9EE](https://via.placeholder.com/10/E7E9EE?text=+) #E7E9EE      |
+| Primario          | ![#4338CA](https://via.placeholder.com/10/4338CA?text=+) #4338CA      |
+| Primario oscuro   | ![#6366F1](https://via.placeholder.com/10/6366F1?text=+) #6366F1      |
+| Prmario claro     | ![#FFF](https://via.placeholder.com/10/FFF?text=+) #FFF      |
+| Secundario        | ![#FFF](https://via.placeholder.com/10/FFF?text=+) #FFF      |
+| Oscuro            | ![#000](https://via.placeholder.com/10/000?text=+) #000      |
+| Claro             | ![#FFF](https://via.placeholder.com/10/FFF?text=+) #FFF      |

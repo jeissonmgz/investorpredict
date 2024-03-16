@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react";
 import React from "react";
 
-jest.mock("../../components", () => ({
+jest.mock("src/app/components", () => ({
   Input: () => <div data-testid="Input" />,
+  Card: () => <div data-testid="Card" />,
 }));
 jest.mock("./components/ScrollList", () => () => (
   <div data-testid="ScrollList" />

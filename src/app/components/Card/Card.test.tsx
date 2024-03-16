@@ -10,4 +10,12 @@ describe("<Card />", () => {
       </Card>
     );
   });
+  
+  it("should init with className", () => {
+    render(
+      <Card className="className">
+        <div></div>
+      </Card>
+    );
+  });
 });

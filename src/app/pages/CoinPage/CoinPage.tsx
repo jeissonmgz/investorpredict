@@ -11,7 +11,7 @@ const CoinPage = (): JSX.Element => {
     <div className="coin_page">
       <div className="coin_page__header_history">
         <header className="coin_page__header">
-          <HyperLink type="secundary" to="">
+          <HyperLink type="secundary" to={`?search=${coin?.name}`}>
             Volver
           </HyperLink>
           <div className="coin_page__title">
@@ -35,7 +35,7 @@ const CoinPage = (): JSX.Element => {
       </div>
       {coin?.pricesLastDaysInUSD && coin.predictionsInUSD && <EstimationCoin coinValues={coin.pricesLastDaysInUSD.map(price => price.value)} historyPrediction={coin.predictionsInUSD} />}
       <footer className="coin_page__footer">
-        <HyperLink type="secundary" to="">
+        <HyperLink type="secundary" to={`?search=${coin?.name}`}>
           Busca más criptomonedas
         </HyperLink>
       </footer>
