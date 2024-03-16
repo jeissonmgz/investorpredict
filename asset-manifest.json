@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/investorpredict/static/css/main.8ecd2d47.css",
-    "main.js": "/investorpredict/static/js/main.e69e8141.js",
-    "static/js/720.c7b7ee1f.chunk.js": "/investorpredict/static/js/720.c7b7ee1f.chunk.js",
-    "static/js/804.15d5bbc3.chunk.js": "/investorpredict/static/js/804.15d5bbc3.chunk.js",
-    "static/js/348.10e10289.chunk.js": "/investorpredict/static/js/348.10e10289.chunk.js",
-    "static/js/254.3a6b1ac0.chunk.js": "/investorpredict/static/js/254.3a6b1ac0.chunk.js",
+    "main.css": "/investorpredict/static/css/main.3f9d8446.css",
+    "main.js": "/investorpredict/static/js/main.4434cb96.js",
+    "static/js/368.f43ec1f0.chunk.js": "/investorpredict/static/js/368.f43ec1f0.chunk.js",
+    "static/js/989.8a5bd9c7.chunk.js": "/investorpredict/static/js/989.8a5bd9c7.chunk.js",
+    "static/js/685.8b5e02d9.chunk.js": "/investorpredict/static/js/685.8b5e02d9.chunk.js",
+    "static/js/52.c0ce4bdb.chunk.js": "/investorpredict/static/js/52.c0ce4bdb.chunk.js",
     "index.html": "/investorpredict/index.html",
-    "main.8ecd2d47.css.map": "/investorpredict/static/css/main.8ecd2d47.css.map",
-    "main.e69e8141.js.map": "/investorpredict/static/js/main.e69e8141.js.map",
-    "720.c7b7ee1f.chunk.js.map": "/investorpredict/static/js/720.c7b7ee1f.chunk.js.map",
-    "804.15d5bbc3.chunk.js.map": "/investorpredict/static/js/804.15d5bbc3.chunk.js.map",
-    "348.10e10289.chunk.js.map": "/investorpredict/static/js/348.10e10289.chunk.js.map",
-    "254.3a6b1ac0.chunk.js.map": "/investorpredict/static/js/254.3a6b1ac0.chunk.js.map"
+    "main.3f9d8446.css.map": "/investorpredict/static/css/main.3f9d8446.css.map",
+    "main.4434cb96.js.map": "/investorpredict/static/js/main.4434cb96.js.map",
+    "368.f43ec1f0.chunk.js.map": "/investorpredict/static/js/368.f43ec1f0.chunk.js.map",
+    "989.8a5bd9c7.chunk.js.map": "/investorpredict/static/js/989.8a5bd9c7.chunk.js.map",
+    "685.8b5e02d9.chunk.js.map": "/investorpredict/static/js/685.8b5e02d9.chunk.js.map",
+    "52.c0ce4bdb.chunk.js.map": "/investorpredict/static/js/52.c0ce4bdb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ecd2d47.css",
-    "static/js/main.e69e8141.js"
+    "static/css/main.3f9d8446.css",
+    "static/js/main.4434cb96.js"
   ]
 }

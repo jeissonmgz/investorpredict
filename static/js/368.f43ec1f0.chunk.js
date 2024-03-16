@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfuture_coin=self.webpackChunkfuture_coin||[]).push([[368],{368:(s,e,c)=>{c.r(e),c.d(e,{default:()=>i});c(43);var a=c(84),n=c(579);const i=()=>(0,n.jsxs)("div",{className:"list_page",children:[(0,n.jsx)("h1",{className:"coin__title",children:"Oops!"}),(0,n.jsx)("p",{children:"No encontramos la p\xe1gina que estas buscando"}),(0,n.jsx)(a.pK,{to:"",children:"Busca criptomonedas"})]})}}]);
+//# sourceMappingURL=368.f43ec1f0.chunk.js.map
